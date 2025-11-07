@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet, Button } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
@@ -89,12 +89,7 @@ export default function TabTwoScreen() {
           library to create a waving hand animation.
           
         </ThemedText>
-        <Button
-            onPress={()=> {a();
-            }}
-
-            title="Fetch"
-            />
+        
         {Platform.select({
           ios: (
             <ThemedText>
