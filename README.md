@@ -11,6 +11,7 @@ Currently the app is still in early development
 - Bug Reporting 🛠️
 
 **Legend**
+
 ✅- Completed
 🚧- WIP
 🛠️- Planned to add
