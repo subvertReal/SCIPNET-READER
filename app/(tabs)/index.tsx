@@ -8,13 +8,13 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
-import {a} from '@/scripts/fetchTest';
+import {fetchSCPExpo} from '@/scripts/wikiFetch';
 
 export default function HomeScreen() {
 
   const [getSCP, setSCP] = useState({});
   async function fetching(){
-    let val = await a();
+    let val = await fetchSCPExpo();
     // console.log(val);
     setSCP(val);
 
@@ -26,7 +26,7 @@ export default function HomeScreen() {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text style={style.paragraph}>Click This Button 🎉</Text>
+      <Text style={style.paragraph}>Welcome to the home page Click This Button 🎉</Text>
       <Button
             onPress={()=> {fetching();
             }}

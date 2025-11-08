@@ -1,6 +1,6 @@
+// Use this as a backup if https://github.com/scp-data/scp-api goes down or somehting?
+
 import axios from 'axios';
-
-
 
 
 async function fetchTest() {
