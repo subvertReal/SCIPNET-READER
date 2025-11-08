@@ -1,7 +1,7 @@
 // @ts-nocheck
-import {useRef, useState} from 'react';
+import {useState} from 'react';
 import { Image } from 'expo-image';
-import { Platform, StyleSheet, Button, Text, View, TextInput } from 'react-native';
+import { Platform, StyleSheet, Button, Text, View, ScrollView } from 'react-native';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -11,12 +11,13 @@ import { Link } from 'expo-router';
 import {a} from '@/scripts/fetchTest';
 
 export default function HomeScreen() {
-  const textRef = useRef<Text>(null)
-  const [getSCP, setSCP] = useState("aaaaaaaaaaaaaaaaa");
+
+  const [getSCP, setSCP] = useState({});
   async function fetching(){
-    let val = a();
+    let val = await a();
+    // console.log(val);
     setSCP(val);
-    textRef.current?.focus();
+
   }
   return (
     <View
@@ -25,25 +26,29 @@ export default function HomeScreen() {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text style={style.paragraph}>Try editing me! 🎉</Text>
+      <Text style={style.paragraph}>Click This Button 🎉</Text>
       <Button
             onPress={()=> {fetching();
             }}
 
             title="Fetch"
             />
+            <ScrollView>
             <View>
               
-              <Text style={style.paragraph} ref={textRef}>aaaaaaaaaaaaaaaaaa{getSCP}</Text>
+              <Text style={style.paragraph}> {getSCP.plainText}</Text>
 
 
             </View>
+            </ScrollView>
     </View>
   );
 }
 
 const style = StyleSheet.create({
     paragraph:{
+    paddingTop:'40',
+    padding:'10',
     color:'white'
     }
 })
