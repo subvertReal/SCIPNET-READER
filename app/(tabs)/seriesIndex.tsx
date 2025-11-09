@@ -11,6 +11,7 @@ import { Link, router } from 'expo-router';
 import {fetchSCPExpo} from '@/scripts/wikiFetch';
 
 // This variable can be accessed literally anywhere, probably easier then spending 100 hours trying to figure out how to use parameters in expo router to send information when I could just use this...
+global.seriesName = ''
 global.scpAPI001 = ''
 global.scpAPI = ''
 global.scpAPI2 = ''
@@ -35,11 +36,12 @@ const seriesIndex = () => {
         title="Series 1"
         onPress={() => {
           // navigate to layoutSCP
+          global.seriesName = 'Series 1'
           global.scpAPI001 = 'https://raw.githubusercontent.com/scp-data/scp-api/refs/heads/main/docs/data/scp/items/content_scp-001.json'
           global.scpAPI = 'https://raw.githubusercontent.com/scp-data/scp-api/refs/heads/main/docs/data/scp/items/content_series-1.json'
           global.scpAPI2 = 'https://raw.githubusercontent.com/scp-data/scp-api/refs/heads/main/docs/data/scp/items/content_series-10.0.json'
           global.scpAPI3 = 'https://raw.githubusercontent.com/scp-data/scp-api/refs/heads/main/docs/data/scp/items/content_series-10.5.json'
-          router.push('/layoutSCP');
+          router.push('/scpFileSelect');
         }}
       />
       <EachSCPSeries name='a'></EachSCPSeries>
