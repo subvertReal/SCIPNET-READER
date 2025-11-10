@@ -17,6 +17,8 @@ global.scpAPI = ''
 global.scpAPI2 = ''
 global.scpAPI3 = ''
 
+
+
 // Button for each scp series
 const EachSCPSeries = ({name}) =>{
   return (
