@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-async function getItem() {
+async function getItem(item) {
   try {
     const response = await axios.get(
-      "https://raw.githubusercontent.com/subvertReal/scpWikiAPI/refs/heads/main/SCP-1000.html"
+      item
     );
     
     return response.data; 
@@ -17,6 +17,6 @@ async function getItem() {
 }
 
 
-export function sendItem(){
-    return getItem();
+export function sendItem(item){
+    return getItem(item);
 }
